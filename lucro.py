@@ -1,4 +1,4 @@
-import openpyx1
+import openpyxl
 
 # definindo as variaveis
 preco_compra = float(input('Digite o preço da compra: '))
@@ -23,16 +23,16 @@ print('A margem de lucro é de {:.2f}%'.format(margem_lucro))
 
 # Salvando resultados em uma planilha do Excel
 
-nome_do_produto
+nome_do_produto = "Produto 1"
 
 resumo = [nome_do_produto, preco_compra, preco_venda, custos_adicionais, custo_frete, lucro, margem_lucro]
 
 
 try:
-    wb = openpyx1.load_workbook('planilha.xlsx')
+    wb = openpyxl.load_workbook('planilha.xlsx')
     sheet = wb.active
 except:
-    wb = openpyx1.Workbook()
+    wb = openpyxl.Workbook()
     sheet = wb.active
     sheet.title = "Resultado da Calculadora de lucro"
 
@@ -56,3 +56,4 @@ sheet['F{}'.format(row)] = lucro
 sheet['G{}'.format(row)] = margem_lucro
 
 # salvando a planilha
+wb.save('planilha.xlsx')
