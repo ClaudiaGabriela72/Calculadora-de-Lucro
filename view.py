@@ -28,3 +28,13 @@ def deletar_linha_por_nome(nome_produto, nome_planilha):
             linha = contador
             sheet.delete_rows(linha)
             break
+
+    # incrementando o contador
+    contador +=1
+
+    # Salvando as mudancas na planilha
+    wb.save(nome_planilha)
+
+
+
+deletar_linha_por_nome('Produto 2', nome)
